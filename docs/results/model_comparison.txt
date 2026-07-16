@@ -1,0 +1,9 @@
+               Model    MAE   RMSE
+0  Linear Regression  32.36  32.36
+1      Random Forest  74.12  74.12
+
+Best Model:
+Model    Linear Regression
+MAE                  32.36
+RMSE                 32.36
+Name: 0, dtype: object
