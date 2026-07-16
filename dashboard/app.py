@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 DB_PATH = Path("database/database.db")
-MODEL_PATH = Path("data/models/linear_regression.pkl")
+MODEL_PATH = Path("data/models/best_model.pkl")
 model = joblib.load(MODEL_PATH)
 
 conn = sqlite3.connect(DB_PATH)
@@ -155,26 +155,40 @@ start_hour = st.slider(
     10
 )
 
-if st.button("Predict Attendance"):
-    feature_names = [
-        "venue_capacity",
-        "is_weekend",
-        "is_holiday",
-        "month",
-        "day",
-        "start_hour"
-    ]
+prediction_category = st.selectbox(
+    "Prediction Category",
+    sorted(events["category_name"].unique()),
+    key="prediction_category"
+)
 
-    model_input = pd.DataFrame([[ 
-        venue_capacity,
-        is_weekend,
-        is_holiday,
-        month,
-        day,
-        start_hour
-    ]], columns=feature_names)
+prediction_day = st.selectbox(
+    "Prediction Day of Week",
+    ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    key="prediction_day"
+)
+
+prediction_weather = st.selectbox(
+    "Prediction Weather",
+    sorted(events["weather_condition"].unique()),
+    key="prediction_weather"
+)
+
+if st.button("Predict Attendance"):
+    model_input = pd.DataFrame([
+        {
+            "category_name": prediction_category,
+            "day_of_week": prediction_day,
+            "weather_condition": prediction_weather,
+            "venue_capacity": venue_capacity,
+            "is_weekend": is_weekend,
+            "is_holiday": is_holiday,
+            "month": month,
+            "day": day,
+            "start_hour": start_hour,
+        }
+    ])
 
     prediction = model.predict(model_input)[0]
 
-    st.success(f"Predicted Attendance: {prediction:.0f}")
+    st.success(f"Predicted Attendance: {prediction:.0f} attendees")
 conn.close()
