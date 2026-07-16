@@ -1,3 +1,4 @@
+import joblib
 import streamlit as st
 import sqlite3
 import pandas as pd
@@ -9,6 +10,8 @@ st.set_page_config(
 )
 
 DB_PATH = Path("database/database.db")
+MODEL_PATH = Path("data/models/linear_regression.pkl")
+model = joblib.load(MODEL_PATH)
 
 conn = sqlite3.connect(DB_PATH)
 
@@ -109,4 +112,69 @@ line_chart = (
 )
 
 st.line_chart(line_chart)
+
+st.divider()
+
+st.header("Predict Attendance")
+
+venue_capacity = st.number_input(
+    "Venue Capacity",
+    min_value=10,
+    max_value=5000,
+    value=200
+)
+
+is_weekend = st.selectbox(
+    "Weekend",
+    [0, 1]
+)
+
+is_holiday = st.selectbox(
+    "Holiday",
+    [0, 1]
+)
+
+month = st.slider(
+    "Month",
+    1,
+    12,
+    7
+)
+
+day = st.slider(
+    "Day",
+    1,
+    31,
+    15
+)
+
+start_hour = st.slider(
+    "Start Hour",
+    0,
+    23,
+    10
+)
+
+if st.button("Predict Attendance"):
+    feature_names = [
+        "venue_capacity",
+        "is_weekend",
+        "is_holiday",
+        "month",
+        "day",
+        "start_hour"
+    ]
+
+    model_input = pd.DataFrame([[ 
+        venue_capacity,
+        is_weekend,
+        is_holiday,
+        month,
+        day,
+        start_hour
+    ]], columns=feature_names)
+
+    prediction = model.predict(model_input)[0]
+
+    st.success(f"Predicted Attendance: {prediction:.0f}")
 conn.close()
