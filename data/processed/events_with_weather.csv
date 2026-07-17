@@ -1,6 +1,6 @@
 event_id,event_name,event_date,start_time,day_of_week,venue_capacity,is_weekend,is_holiday,category_name,attendance_count,weather_condition,temperature,precipitation
-1,AI Workshop,2026-07-20,10:00,Monday,150,0,0,Technical,128,Sunny,,
-2,Hackathon,2026-07-26,09:00,Sunday,300,1,0,Technical,285,Cloudy,,
-3,Music Fest,2026-08-02,18:00,Sunday,500,1,0,Cultural,462,Clear,,
-4,Football Tournament,2026-08-08,16:00,Saturday,250,1,0,Sports,183,Rainy,,
-5,Career Seminar,2026-08-12,11:00,Wednesday,180,0,0,Seminar,149,Sunny,,
+1,AI Workshop,2025-07-20,10:00,Monday,150,0,0,Technical,128,3,30.05,0.0
+2,Hackathon,2025-07-26,09:00,Sunday,300,1,0,Technical,285,55,30.35,1.1
+3,Music Fest,2025-08-02,18:00,Sunday,500,1,0,Cultural,462,53,29.3,0.9
+4,Football Tournament,2025-08-08,16:00,Saturday,250,1,0,Sports,183,3,29.9,0.0
+5,Career Seminar,2025-08-12,11:00,Wednesday,180,0,0,Seminar,149,61,29.5,5.6
