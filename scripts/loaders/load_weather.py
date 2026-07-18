@@ -23,7 +23,7 @@ VALUES (?, ?, ?, ?)
         """,
         (
             row["event_date"],
-            str(row["weather_code"]),
+            str(row["weather_condition"]),
             float(
                 (row["temperature_max"] + row["temperature_min"]) / 2
             ),
