@@ -1,4 +1,14 @@
 event_name,event_date,start_time,venue_capacity,is_weekend,is_holiday,attendance_count,month,day,start_hour,category_name_Cultural,category_name_Seminar,category_name_Sports,category_name_Technical,day_of_week_Monday,day_of_week_Saturday,day_of_week_Sunday,day_of_week_Wednesday,weather_condition_Clear,weather_condition_Cloudy,weather_condition_Rainy,weather_condition_Sunny
+AI Workshop,2025-07-20,10:00,150,0,0,128,7,20,10,False,False,False,True,True,False,False,False,False,False,False,True
+Hackathon,2025-07-26,09:00,300,1,0,285,7,26,9,False,False,False,True,False,False,True,False,False,True,False,False
+Music Fest,2025-08-02,18:00,500,1,0,462,8,2,18,True,False,False,False,False,False,True,False,True,False,False,False
+Football Tournament,2025-08-08,16:00,250,1,0,183,8,8,16,False,False,True,False,False,True,False,False,False,False,True,False
+Career Seminar,2025-08-12,11:00,180,0,0,149,8,12,11,False,True,False,False,False,False,False,True,False,False,False,True
+AI Workshop,2026-07-20,10:00,150,0,0,128,7,20,10,False,False,False,True,True,False,False,False,False,False,False,True
+Hackathon,2026-07-26,09:00,300,1,0,285,7,26,9,False,False,False,True,False,False,True,False,False,True,False,False
+Music Fest,2026-08-02,18:00,500,1,0,462,8,2,18,True,False,False,False,False,False,True,False,True,False,False,False
+Football Tournament,2026-08-08,16:00,250,1,0,183,8,8,16,False,False,True,False,False,True,False,False,False,False,True,False
+Career Seminar,2026-08-12,11:00,180,0,0,149,8,12,11,False,True,False,False,False,False,False,True,False,False,False,True
 AI Workshop,2026-07-20,10:00,150,0,0,128,7,20,10,False,False,False,True,True,False,False,False,False,False,False,True
 Hackathon,2026-07-26,09:00,300,1,0,285,7,26,9,False,False,False,True,False,False,True,False,False,True,False,False
 Music Fest,2026-08-02,18:00,500,1,0,462,8,2,18,True,False,False,False,False,False,True,False,True,False,False,False
